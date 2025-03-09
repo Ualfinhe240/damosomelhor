@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Book, Menu, X } from 'lucide-react';
@@ -24,7 +23,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="/" className="flex items-center space-x-2 text-primary">
           <Book className="w-8 h-8" />
-          <span className="font-bold text-xl">WebWise</span>
+          <span className="font-bold text-xl">Ualfinhe</span>
         </a>
         
         <div className="hidden md:flex items-center space-x-8">

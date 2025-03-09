@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Book className="w-6 h-6 text-primary" />
-              <span className="font-bold text-xl">WebWise</span>
+              <span className="font-bold text-xl">Ualfinhe</span>
             </div>
             <p className="text-muted-foreground mb-6">
               Your premier destination for comprehensive web development education. Learn, build, and grow with us.
@@ -96,7 +96,7 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} WebWise Academy. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ualfinhe Academy. All rights reserved.</p>
           <div className="flex justify-center space-x-6 mt-3">
             <a href="#terms" className="hover:text-primary transition-colors">Terms of Service</a>
             <a href="#privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
