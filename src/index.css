@@ -89,6 +89,12 @@
   }
 }
 
+@layer utilities {
+  .scale-98 {
+    transform: scale(0.98);
+  }
+}
+
 @layer components {
   .glass-card {
     @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-md;

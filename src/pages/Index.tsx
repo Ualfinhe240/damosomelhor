@@ -12,7 +12,8 @@ const Index = () => {
   useEffect(() => {
     const handleSmoothScroll = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === 'A' && target.hash && target.hash.startsWith('#')) {
+      // Check if the target is an anchor element before accessing hash property
+      if (target instanceof HTMLAnchorElement && target.hash && target.hash.startsWith('#')) {
         const section = document.querySelector(target.hash);
         if (section) {
           e.preventDefault();
