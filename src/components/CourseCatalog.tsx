@@ -1,7 +1,10 @@
-
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CourseCard from './CourseCard';
 import { ChevronRight } from 'lucide-react';
+
+// Categories for filtering
+const categories = ["All", "Frontend", "Backend", "Full-Stack", "DevOps"];
 
 // Sample course data
 const courses = [
@@ -79,9 +82,6 @@ const courses = [
   }
 ];
 
-// Categories for filtering
-const categories = ["All", "Frontend", "Backend", "Full-Stack", "DevOps"];
-
 const CourseCatalog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   
@@ -127,12 +127,12 @@ const CourseCatalog = () => {
         </div>
         
         <div className="flex justify-center mt-12">
-          <a 
-            href="/courses" 
+          <Link 
+            to="/courses" 
             className="button-secondary flex items-center gap-2"
           >
             View All Courses <ChevronRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
