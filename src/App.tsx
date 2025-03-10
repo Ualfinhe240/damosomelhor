@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp";
 import Courses from "./pages/Courses";
 import DatabaseExample from "./pages/DatabaseExample";
 import EmailManagement from "./pages/EmailManagement";
+import LearningPathDetail from "./pages/LearningPathDetail";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/courses" element={<Courses />} />
           <Route path="/database" element={<DatabaseExample />} />
           <Route path="/emails" element={<EmailManagement />} />
+          <Route path="/paths/:id" element={<LearningPathDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
