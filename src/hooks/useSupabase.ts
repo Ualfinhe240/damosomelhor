@@ -1,4 +1,3 @@
-
 import { useCallback } from 'react';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
@@ -124,11 +123,133 @@ export function useSupabase() {
     }
   }, []);
 
+  // Função específica para salvar email na base de dados
+  const saveEmail = useCallback(async (
+    email: string,
+    options?: {
+      name?: string;
+      subscribed?: boolean;
+      source?: string;
+    }
+  ): Promise<boolean> => {
+    try {
+      // Verifica se o email já existe
+      const { data: existingEmail } = await supabase
+        .from('emails')
+        .select('id')
+        .eq('email', email)
+        .single();
+      
+      if (existingEmail) {
+        // Atualiza o email existente
+        const { error } = await supabase
+          .from('emails')
+          .update({
+            name: options?.name,
+            subscribed: options?.subscribed ?? true,
+            last_updated: new Date().toISOString(),
+            source: options?.source || 'website'
+          })
+          .eq('email', email);
+
+        if (error) {
+          console.error('Erro ao atualizar email:', error);
+          toast.error(`Erro ao atualizar email: ${error.message}`);
+          return false;
+        }
+        
+        toast.success('Email atualizado com sucesso!');
+        return true;
+      } else {
+        // Insere novo email
+        const { error } = await supabase
+          .from('emails')
+          .insert({
+            email,
+            name: options?.name,
+            subscribed: options?.subscribed ?? true,
+            created_at: new Date().toISOString(),
+            source: options?.source || 'website'
+          });
+
+        if (error) {
+          console.error('Erro ao salvar email:', error);
+          toast.error(`Erro ao salvar email: ${error.message}`);
+          return false;
+        }
+        
+        toast.success('Email cadastrado com sucesso!');
+        return true;
+      }
+    } catch (error) {
+      console.error('Erro ao processar email:', error);
+      toast.error('Erro ao processar email no banco de dados');
+      return false;
+    }
+  }, []);
+
+  // Função para verificar se um email está cadastrado
+  const checkEmailExists = useCallback(async (
+    email: string
+  ): Promise<boolean> => {
+    try {
+      const { data, error } = await supabase
+        .from('emails')
+        .select('id')
+        .eq('email', email)
+        .single();
+
+      if (error && error.code !== 'PGRST116') {
+        console.error('Erro ao verificar email:', error);
+        return false;
+      }
+
+      return !!data;
+    } catch (error) {
+      console.error('Erro ao verificar email:', error);
+      return false;
+    }
+  }, []);
+
+  // Função para atualizar status de inscrição do email
+  const updateEmailSubscription = useCallback(async (
+    email: string,
+    subscribed: boolean
+  ): Promise<boolean> => {
+    try {
+      const { error } = await supabase
+        .from('emails')
+        .update({ 
+          subscribed, 
+          last_updated: new Date().toISOString() 
+        })
+        .eq('email', email);
+
+      if (error) {
+        console.error('Erro ao atualizar inscrição:', error);
+        toast.error(`Erro ao atualizar inscrição: ${error.message}`);
+        return false;
+      }
+
+      toast.success(subscribed 
+        ? 'Inscrição realizada com sucesso!' 
+        : 'Cancelamento de inscrição realizado com sucesso!');
+      return true;
+    } catch (error) {
+      console.error('Erro ao atualizar inscrição:', error);
+      toast.error('Erro ao processar atualização de inscrição');
+      return false;
+    }
+  }, []);
+
   return {
     fetchData,
     insertData,
     updateData,
     deleteData,
+    saveEmail,
+    checkEmailExists,
+    updateEmailSubscription,
     supabase,
   };
 }

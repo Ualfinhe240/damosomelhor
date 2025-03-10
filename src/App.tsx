@@ -10,6 +10,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Courses from "./pages/Courses";
 import DatabaseExample from "./pages/DatabaseExample";
+import EmailManagement from "./pages/EmailManagement";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/signup" element={<SignUp />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/database" element={<DatabaseExample />} />
+          <Route path="/emails" element={<EmailManagement />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
