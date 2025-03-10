@@ -1,11 +1,13 @@
 
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { ArrowLeft, CheckCircle, UserPlus } from 'lucide-react';
+import { toast } from 'sonner';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useSupabase } from '@/hooks/useSupabase';
 
 // This data would ideally come from a database
 const pathsData = [
@@ -143,6 +145,9 @@ const pathsData = [
 const LearningPathDetail = () => {
   const { id } = useParams();
   const pathId = parseInt(id || '1');
+  const navigate = useNavigate();
+  const { saveEmail, insertData } = useSupabase();
+  const [enrolling, setEnrolling] = useState(false);
   
   const path = pathsData.find(p => p.id === pathId);
   
@@ -156,6 +161,62 @@ const LearningPathDetail = () => {
       </div>
     );
   }
+
+  const handleEnroll = async () => {
+    try {
+      setEnrolling(true);
+      
+      // In a real app, you would typically:
+      // 1. Check if the user is authenticated
+      // 2. If not, redirect to sign-in page or show a sign-up modal
+      // 3. If yes, create an enrollment record
+      
+      // For demo purposes, we'll create a simple enrollment record
+      // and show a success message with instructions
+      
+      const enrollmentData = {
+        path_id: pathId,
+        enrolled_at: new Date().toISOString(),
+        status: 'active',
+        progress: 0,
+      };
+      
+      // Attempt to insert enrollment data
+      const result = await insertData('enrollments', enrollmentData);
+      
+      if (result) {
+        // Show success message
+        toast.success('Successfully enrolled in this learning path!', {
+          description: 'Check your email for getting started instructions.',
+          duration: 5000,
+        });
+        
+        // Optional: Prompt for email subscription if needed
+        setTimeout(() => {
+          const userEmail = prompt('Enter your email to receive course materials:');
+          if (userEmail) {
+            saveEmail(userEmail, {
+              name: '',
+              subscribed: true,
+              source: `path-enrollment-${pathId}`
+            });
+          }
+        }, 500);
+      } else {
+        // Show error message
+        toast.error('Unable to complete enrollment. Please try again.', {
+          duration: 5000,
+        });
+      }
+    } catch (error) {
+      console.error('Enrollment error:', error);
+      toast.error('Something went wrong. Please try again later.', {
+        duration: 5000,
+      });
+    } finally {
+      setEnrolling(false);
+    }
+  };
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -231,7 +292,15 @@ const LearningPathDetail = () => {
             </div>
             
             <div className="mt-12 flex justify-center">
-              <Button size="lg" className="px-8">Enroll in this Path</Button>
+              <Button 
+                size="lg" 
+                className="px-8 gap-2"
+                onClick={handleEnroll}
+                disabled={enrolling}
+              >
+                <UserPlus className="w-5 h-5" />
+                {enrolling ? 'Processing...' : 'Enroll in this Path'}
+              </Button>
             </div>
           </div>
         </div>
