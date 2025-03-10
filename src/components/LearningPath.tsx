@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const paths = [
   {
@@ -104,12 +105,12 @@ const LearningPath = () => {
                   </div>
                 </div>
                 
-                <a 
-                  href={`/paths/${path.id}`}
+                <Link 
+                  to={`/paths/${path.id}`}
                   className="w-full flex items-center justify-center gap-2 button-primary"
                 >
                   Start Learning <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

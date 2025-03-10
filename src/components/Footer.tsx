@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Book, Mail, MapPin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -20,7 +21,9 @@ const Footer = () => {
               {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
                 <a 
                   key={social}
-                  href={`#${social}`}
+                  href={`https://${social}.com`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                 >
                   <span className="sr-only">{social}</span>
@@ -34,19 +37,28 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                { text: "Courses", href: "#courses" },
+                { text: "Courses", href: "/courses" },
                 { text: "Learning Paths", href: "#paths" },
                 { text: "Instructors", href: "#instructors" },
                 { text: "About Us", href: "#about" },
                 { text: "Contact", href: "#contact" }
               ].map((link) => (
                 <li key={link.text}>
-                  <a 
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.text}
-                  </a>
+                  {link.href.startsWith('/') ? (
+                    <Link 
+                      to={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.text}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.text}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
