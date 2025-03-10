@@ -1,8 +1,11 @@
 
-import React from 'react';
-import { ArrowRight, Code, Server, Database } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Code, Server, Database, X } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const Hero = () => {
+  const [showDemoVideo, setShowDemoVideo] = useState(false);
+
   return (
     <section className="pt-32 pb-20 overflow-hidden relative">
       <div className="section-container">
@@ -21,9 +24,12 @@ const Hero = () => {
               <a href="#courses" className="button-primary flex items-center gap-2">
                 Explore Courses <ArrowRight className="w-4 h-4" />
               </a>
-              <a href="#demo" className="button-secondary">
+              <button 
+                onClick={() => setShowDemoVideo(true)} 
+                className="button-secondary"
+              >
                 Watch Demo
-              </a>
+              </button>
             </div>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <div className="flex -space-x-2">
@@ -77,6 +83,28 @@ const Hero = () => {
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-100/40 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-100/40 rounded-full blur-3xl"></div>
+
+      {/* Demo Video Modal */}
+      <Dialog open={showDemoVideo} onOpenChange={setShowDemoVideo}>
+        <DialogContent className="sm:max-w-4xl">
+          <DialogHeader>
+            <DialogTitle>Web Development Course Demo</DialogTitle>
+            <DialogDescription>
+              Watch this quick demo to learn what our courses offer
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4 aspect-video w-full bg-black rounded-md overflow-hidden">
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+              title="Web Development Course Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
