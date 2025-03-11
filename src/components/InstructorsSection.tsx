@@ -1,4 +1,3 @@
-
 import React from 'react';
 import InstructorProfile from './InstructorProfile';
 
@@ -7,7 +6,7 @@ const instructors = [
     id: 1,
     name: "Maria Johnson",
     role: "Frontend Specialist",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     bio: "Frontend developer with 8+ years of experience specializing in HTML, CSS, and JavaScript. Passionate about creating beautiful and accessible web experiences.",
     skills: ["HTML", "CSS", "JavaScript", "React", "UI/UX"],
     courses: 12,
@@ -21,7 +20,7 @@ const instructors = [
     id: 2,
     name: "David Chen",
     role: "JavaScript Expert",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     bio: "Full-stack developer with a focus on JavaScript frameworks. Previously worked at major tech companies and now dedicated to teaching web technologies.",
     skills: ["JavaScript", "TypeScript", "React", "Node.js", "Express"],
     courses: 15,
@@ -35,7 +34,7 @@ const instructors = [
     id: 3,
     name: "Sophia Lee",
     role: "Backend Developer",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
     bio: "Backend engineer specialized in Node.js, databases, and API development. Creator of several popular npm packages and open-source contributor.",
     skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "API Design"],
     courses: 8,
@@ -48,7 +47,7 @@ const instructors = [
     id: 4,
     name: "Michael Brown",
     role: "Full-Stack Instructor",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
     bio: "Full-stack developer and educator with 10+ years in the industry. Previously CTO of a tech startup and now focused on helping new developers succeed.",
     skills: ["React", "Node.js", "MongoDB", "AWS", "DevOps"],
     courses: 20,
