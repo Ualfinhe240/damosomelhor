@@ -1,11 +1,12 @@
+
 import React from 'react';
 import InstructorProfile from './InstructorProfile';
 
 const instructors = [
   {
     id: 1,
-    name: "Maria Johnson",
-    role: "Frontend Specialist",
+    name: "Frontend Expert",
+    role: "UI/UX Specialist",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     bio: "Frontend developer with 8+ years of experience specializing in HTML, CSS, and JavaScript. Passionate about creating beautiful and accessible web experiences.",
     skills: ["HTML", "CSS", "JavaScript", "React", "UI/UX"],
@@ -18,8 +19,8 @@ const instructors = [
   },
   {
     id: 2,
-    name: "David Chen",
-    role: "JavaScript Expert",
+    name: "JavaScript Guru",
+    role: "Full-Stack Developer",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     bio: "Full-stack developer with a focus on JavaScript frameworks. Previously worked at major tech companies and now dedicated to teaching web technologies.",
     skills: ["JavaScript", "TypeScript", "React", "Node.js", "Express"],
@@ -32,8 +33,8 @@ const instructors = [
   },
   {
     id: 3,
-    name: "Sophia Lee",
-    role: "Backend Developer",
+    name: "Backend Architect",
+    role: "API Developer",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
     bio: "Backend engineer specialized in Node.js, databases, and API development. Creator of several popular npm packages and open-source contributor.",
     skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "API Design"],
@@ -45,7 +46,7 @@ const instructors = [
   },
   {
     id: 4,
-    name: "Michael Brown",
+    name: "Senior Developer",
     role: "Full-Stack Instructor",
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
     bio: "Full-stack developer and educator with 10+ years in the industry. Previously CTO of a tech startup and now focused on helping new developers succeed.",
