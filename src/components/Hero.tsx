@@ -88,16 +88,16 @@ const Hero = () => {
       <Dialog open={showDemoVideo} onOpenChange={setShowDemoVideo}>
         <DialogContent className="sm:max-w-4xl">
           <DialogHeader>
-            <DialogTitle>Web Development Course Demo</DialogTitle>
+            <DialogTitle>Curso em Vídeo</DialogTitle>
             <DialogDescription>
-              Watch this quick demo to learn what our courses offer
+              Aprenda programação com o melhor conteúdo em português
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4 aspect-video w-full bg-black rounded-md overflow-hidden">
             <iframe 
               className="w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-              title="Web Development Course Demo"
+              src="https://www.youtube.com/embed?listType=user&list=cursoemvideo" 
+              title="Curso em Vídeo"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
