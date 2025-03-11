@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowRight, Code, Server, Database, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -86,18 +85,18 @@ const Hero = () => {
 
       {/* Demo Video Modal */}
       <Dialog open={showDemoVideo} onOpenChange={setShowDemoVideo}>
-        <DialogContent className="sm:max-w-4xl">
-          <DialogHeader>
+        <DialogContent className="sm:max-w-4xl overflow-hidden p-0">
+          <DialogHeader className="p-6">
             <DialogTitle>Curso em Vídeo</DialogTitle>
             <DialogDescription>
-              Aprenda programação com o melhor conteúdo em português
+              Curso de Desenvolvimento Web com Gustavo Guanabara
             </DialogDescription>
           </DialogHeader>
-          <div className="mt-4 aspect-video w-full bg-black rounded-md overflow-hidden">
+          <div className="aspect-video w-full bg-black">
             <iframe 
               className="w-full h-full"
-              src="https://www.youtube.com/embed?listType=user&list=cursoemvideo" 
-              title="Curso em Vídeo"
+              src="https://www.youtube.com/embed/videoseries?list=PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o" 
+              title="Curso de HTML5 e CSS3 - Gustavo Guanabara"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
