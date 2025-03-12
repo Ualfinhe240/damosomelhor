@@ -17,7 +17,7 @@ const DatabaseExample = () => {
   const { fetchData, insertData, deleteData } = useSupabase();
   const [messages, setMessages] = useState<Message[]>([]);
   const [content, setContent] = useState('');
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('ualfinhe@gmail.com');
   const [loading, setLoading] = useState(false);
 
   // Buscar mensagens ao carregar a página
@@ -40,7 +40,7 @@ const DatabaseExample = () => {
     setLoading(true);
     await insertData<Message>('messages', { content, email });
     setContent('');
-    setEmail('');
+    // Não resetamos o email para manter o email preferido
     await loadMessages();
     setLoading(false);
   };

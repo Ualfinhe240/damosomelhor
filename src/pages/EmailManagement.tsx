@@ -21,7 +21,7 @@ const EmailManagement = () => {
   const { fetchData, updateEmailSubscription, saveEmail } = useSupabase();
   const [emails, setEmails] = useState<EmailRecord[]>([]);
   const [loading, setLoading] = useState(false);
-  const [newEmail, setNewEmail] = useState('');
+  const [newEmail, setNewEmail] = useState('ualfinhe@gmail.com');
   const [newName, setNewName] = useState('');
 
   // Carregar emails do banco
@@ -57,7 +57,7 @@ const EmailManagement = () => {
     
     try {
       await saveEmail(newEmail, { name: newName || undefined });
-      setNewEmail('');
+      // Não resetamos o email para manter o email preferido
       setNewName('');
       loadEmails();
     } catch (error) {
