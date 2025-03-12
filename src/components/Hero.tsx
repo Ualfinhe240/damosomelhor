@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ArrowRight, Code, Server, Database, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -86,12 +87,6 @@ const Hero = () => {
       {/* Demo Video Modal */}
       <Dialog open={showDemoVideo} onOpenChange={setShowDemoVideo}>
         <DialogContent className="sm:max-w-4xl overflow-hidden p-0">
-          <DialogHeader className="p-6">
-            <DialogTitle>Curso em Vídeo</DialogTitle>
-            <DialogDescription>
-              Curso de Desenvolvimento Web com Gustavo Guanabara
-            </DialogDescription>
-          </DialogHeader>
           <div className="aspect-video w-full bg-black">
             <iframe 
               className="w-full h-full"
