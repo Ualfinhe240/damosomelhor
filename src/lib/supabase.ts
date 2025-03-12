@@ -7,4 +7,22 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://your-supabase-
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'your-supabase-anon-key';
 
 // Create the Supabase client
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true
+  }
+});
+
+// Helper function to get current user
+export const getCurrentUser = async () => {
+  const { data: { user } } = await supabase.auth.getUser();
+  return user;
+};
+
+// Helper function to check if user is logged in
+export const isAuthenticated = async () => {
+  const user = await getCurrentUser();
+  return !!user;
+};

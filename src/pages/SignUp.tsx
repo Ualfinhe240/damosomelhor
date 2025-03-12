@@ -5,19 +5,24 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
 import { toast } from "sonner";
+import { supabase } from '@/lib/supabase';
 
 const SignUp = () => {
   const navigate = useNavigate();
 
   const handleGoogleSignUp = async () => {
     try {
-      // Este é um placeholder para a autenticação Google real
-      // Em uma implementação real, você se conectaria a um serviço backend
-      toast.success("A funcionalidade de cadastro com Google será implementada com um backend");
-      // Simular cadastro bem-sucedido
-      setTimeout(() => {
-        navigate('/');
-      }, 2000);
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin,
+        }
+      });
+
+      if (error) {
+        toast.error("Falha no cadastro com Google");
+        console.error("Erro de cadastro:", error);
+      }
     } catch (error) {
       toast.error("Falha no cadastro");
       console.error("Erro de cadastro:", error);
