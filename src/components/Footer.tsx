@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Book, Mail, MapPin, Phone } from 'lucide-react';
+import { Book, Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -18,18 +18,42 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {/* Social Media Icons */}
-              {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
-                <a 
-                  key={social}
-                  href={`https://${social}.com`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-                >
-                  <span className="sr-only">{social}</span>
-                  <div className="w-5 h-5"></div>
-                </a>
-              ))}
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <span className="sr-only">Facebook</span>
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <span className="sr-only">Twitter</span>
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <span className="sr-only">Instagram</span>
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <span className="sr-only">LinkedIn</span>
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
           
