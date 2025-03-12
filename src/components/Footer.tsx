@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="font-bold text-xl">Ualfinhe</span>
             </div>
             <p className="text-muted-foreground mb-6">
-              Your premier destination for comprehensive web development education. Learn, build, and grow with us.
+              Seu destino principal para educação abrangente em desenvolvimento web. Aprenda, construa e cresça conosco.
             </p>
             <div className="flex space-x-4">
               {/* Social Media Icons */}
@@ -34,14 +34,14 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-bold text-lg mb-4">Links Rápidos</h3>
             <ul className="space-y-3">
               {[
-                { text: "Courses", href: "/courses" },
-                { text: "Learning Paths", href: "#paths" },
-                { text: "Instructors", href: "#instructors" },
-                { text: "About Us", href: "#about" },
-                { text: "Contact", href: "#contact" }
+                { text: "Cursos", href: "/courses" },
+                { text: "Trilhas de Aprendizado", href: "#paths" },
+                { text: "Instrutores", href: "#instructors" },
+                { text: "Sobre Nós", href: "#about" },
+                { text: "Contato", href: "#contact" }
               ].map((link) => (
                 <li key={link.text}>
                   {link.href.startsWith('/') ? (
@@ -65,14 +65,14 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Resources</h3>
+            <h3 className="font-bold text-lg mb-4">Recursos</h3>
             <ul className="space-y-3">
               {[
                 { text: "Blog", href: "#blog" },
-                { text: "Documentation", href: "#docs" },
-                { text: "Community Forum", href: "#forum" },
+                { text: "Documentação", href: "#docs" },
+                { text: "Fórum da Comunidade", href: "#forum" },
                 { text: "FAQ", href: "#faq" },
-                { text: "Support", href: "#support" }
+                { text: "Suporte", href: "#support" }
               ].map((link) => (
                 <li key={link.text}>
                   <a 
@@ -87,7 +87,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-bold text-lg mb-4">Contate-nos</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -108,11 +108,11 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Ualfinhe Academy. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Academia Ualfinhe. Todos os direitos reservados.</p>
           <div className="flex justify-center space-x-6 mt-3">
-            <a href="#terms" className="hover:text-primary transition-colors">Terms of Service</a>
-            <a href="#privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#cookies" className="hover:text-primary transition-colors">Cookie Policy</a>
+            <a href="#terms" className="hover:text-primary transition-colors">Termos de Serviço</a>
+            <a href="#privacy" className="hover:text-primary transition-colors">Política de Privacidade</a>
+            <a href="#cookies" className="hover:text-primary transition-colors">Política de Cookies</a>
           </div>
         </div>
       </div>

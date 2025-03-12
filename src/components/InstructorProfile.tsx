@@ -57,15 +57,15 @@ const InstructorProfile = ({
         <div className="grid grid-cols-3 gap-2 py-4 border-y border-border">
           <div className="text-center">
             <p className="text-xl font-bold">{courses}</p>
-            <p className="text-xs text-muted-foreground">Courses</p>
+            <p className="text-xs text-muted-foreground">Cursos</p>
           </div>
           <div className="text-center">
             <p className="text-xl font-bold">{students.toLocaleString()}</p>
-            <p className="text-xs text-muted-foreground">Students</p>
+            <p className="text-xs text-muted-foreground">Alunos</p>
           </div>
           <div className="text-center">
             <p className="text-xl font-bold">{rating.toFixed(1)}</p>
-            <p className="text-xs text-muted-foreground">Rating</p>
+            <p className="text-xs text-muted-foreground">Avaliação</p>
           </div>
         </div>
         

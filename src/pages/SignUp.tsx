@@ -11,16 +11,16 @@ const SignUp = () => {
 
   const handleGoogleSignUp = async () => {
     try {
-      // This is a placeholder for the actual Google authentication
-      // In a real implementation, you would connect to a backend service
-      toast.success("Google sign-up functionality will be implemented with a backend");
-      // Simulate successful registration
+      // Este é um placeholder para a autenticação Google real
+      // Em uma implementação real, você se conectaria a um serviço backend
+      toast.success("A funcionalidade de cadastro com Google será implementada com um backend");
+      // Simular cadastro bem-sucedido
       setTimeout(() => {
         navigate('/');
       }, 2000);
     } catch (error) {
-      toast.error("Registration failed");
-      console.error("Registration error:", error);
+      toast.error("Falha no cadastro");
+      console.error("Erro de cadastro:", error);
     }
   };
 
@@ -28,9 +28,9 @@ const SignUp = () => {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
+          <CardTitle className="text-2xl font-bold">Crie uma conta</CardTitle>
           <CardDescription>
-            Sign up for WebWise to start learning
+            Cadastre-se no WebWise para começar a aprender
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
@@ -40,7 +40,7 @@ const SignUp = () => {
             onClick={handleGoogleSignUp}
           >
             <FcGoogle className="h-5 w-5" />
-            Sign up with Google
+            Cadastrar com Google
           </Button>
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
@@ -48,20 +48,20 @@ const SignUp = () => {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-background px-2 text-muted-foreground">
-                Or continue with
+                Ou continue com
               </span>
             </div>
           </div>
-          {/* Placeholder for email/password registration form */}
+          {/* Placeholder para formulário de cadastro com email/senha */}
           <div className="text-center text-sm text-muted-foreground mt-4">
-            <p>Email/password registration will be implemented with a backend</p>
+            <p>Cadastro com email/senha será implementado com um backend</p>
           </div>
         </CardContent>
         <CardFooter className="flex flex-col gap-2">
           <div className="text-center text-sm text-muted-foreground">
-            Already have an account?{" "}
+            Já tem uma conta?{" "}
             <a href="/signin" className="text-primary underline-offset-4 hover:underline">
-              Sign in
+              Entrar
             </a>
           </div>
         </CardFooter>

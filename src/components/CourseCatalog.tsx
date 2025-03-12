@@ -1,91 +1,92 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CourseCard from './CourseCard';
 import { ChevronRight } from 'lucide-react';
 
-// Categories for filtering
-const categories = ["All", "Frontend", "Backend", "Full-Stack", "DevOps"];
+// Categorias para filtro
+const categories = ["Todos", "Frontend", "Backend", "Full-Stack", "DevOps"];
 
-// Sample course data
+// Dados de cursos de exemplo
 const courses = [
   {
     id: 1,
-    title: "Complete HTML & CSS Fundamentals",
-    description: "Master the building blocks of the web with HTML5 and CSS3. Learn to create responsive layouts and modern designs.",
+    title: "Fundamentos Completos de HTML & CSS",
+    description: "Domine os blocos de construção da web com HTML5 e CSS3. Aprenda a criar layouts responsivos e designs modernos.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     category: "Frontend",
-    duration: "12 hours",
-    level: "Beginner",
+    duration: "12 horas",
+    level: "Iniciante",
     students: 5840,
     rating: 4.8,
-    instructor: "Maria Johnson"
+    instructor: "Maria Silva"
   },
   {
     id: 2,
-    title: "JavaScript: From Zero to Hero",
-    description: "A comprehensive journey through modern JavaScript. Learn core concepts, ES6+ features, and practical applications.",
+    title: "JavaScript: Do Zero ao Herói",
+    description: "Uma jornada abrangente pelo JavaScript moderno. Aprenda conceitos principais, recursos ES6+ e aplicações práticas.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     category: "Frontend",
-    duration: "24 hours",
-    level: "Intermediate",
+    duration: "24 horas",
+    level: "Intermediário",
     students: 4230,
     rating: 4.9,
-    instructor: "David Chen"
+    instructor: "David Santos"
   },
   {
     id: 3,
-    title: "React.js for Modern Web Apps",
-    description: "Learn to build powerful, interactive web applications with React. Master components, hooks, and state management.",
+    title: "React.js para Aplicações Web Modernas",
+    description: "Aprenda a construir aplicações web poderosas e interativas com React. Domine componentes, hooks e gerenciamento de estado.",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
     category: "Frontend",
-    duration: "18 hours",
-    level: "Intermediate",
+    duration: "18 horas",
+    level: "Intermediário",
     students: 3650,
     rating: 4.7,
-    instructor: "Alex Morgan"
+    instructor: "Alex Martins"
   },
   {
     id: 4,
-    title: "Node.js & Express: Backend Development",
-    description: "Build robust server-side applications with Node.js and Express. Create RESTful APIs and handle authentication.",
+    title: "Node.js & Express: Desenvolvimento Backend",
+    description: "Construa aplicações robustas do lado do servidor com Node.js e Express. Crie APIs RESTful e lide com autenticação.",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
     category: "Backend",
-    duration: "16 hours",
-    level: "Intermediate",
+    duration: "16 horas",
+    level: "Intermediário",
     students: 2980,
     rating: 4.6,
-    instructor: "Sophia Lee"
+    instructor: "Sofia Lima"
   },
   {
     id: 5,
-    title: "Full-Stack Web Development Bootcamp",
-    description: "Comprehensive full-stack development course covering frontend, backend, databases, and deployment strategies.",
+    title: "Bootcamp de Desenvolvimento Web Full-Stack",
+    description: "Curso abrangente de desenvolvimento full-stack cobrindo frontend, backend, bancos de dados e estratégias de deploy.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     category: "Full-Stack",
-    duration: "48 hours",
-    level: "Advanced",
+    duration: "48 horas",
+    level: "Avançado",
     students: 1890,
     rating: 4.9,
-    instructor: "Michael Brown"
+    instructor: "Miguel Oliveira"
   },
   {
     id: 6,
-    title: "API Design and Development",
-    description: "Learn to design and implement robust APIs that power modern web and mobile applications.",
+    title: "Design e Desenvolvimento de APIs",
+    description: "Aprenda a projetar e implementar APIs robustas que alimentam aplicações web e mobile modernas.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     category: "Backend",
-    duration: "14 hours",
-    level: "Intermediate",
+    duration: "14 horas",
+    level: "Intermediário",
     students: 2250,
     rating: 4.5,
-    instructor: "James Wilson"
+    instructor: "Tiago Costa"
   }
 ];
 
 const CourseCatalog = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Todos");
   
-  const filteredCourses = activeCategory === "All" 
+  const filteredCourses = activeCategory === "Todos" 
     ? courses 
     : courses.filter(course => course.category === activeCategory);
 
@@ -93,10 +94,10 @@ const CourseCatalog = () => {
     <section id="courses" className="py-20 bg-secondary/30">
       <div className="section-container">
         <div className="flex flex-col items-center text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore Our Courses</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore Nossos Cursos</h2>
           <p className="text-muted-foreground max-w-2xl">
-            Dive into our comprehensive curriculum designed to take you from beginner to professional.
-            Each course is crafted by industry experts and includes hands-on projects.
+            Mergulhe em nosso currículo abrangente projetado para levá-lo de iniciante a profissional.
+            Cada curso é elaborado por especialistas da indústria e inclui projetos práticos.
           </p>
         </div>
         
@@ -131,7 +132,7 @@ const CourseCatalog = () => {
             to="/courses" 
             className="button-secondary flex items-center gap-2"
           >
-            View All Courses <ChevronRight className="w-4 h-4" />
+            Ver Todos os Cursos <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

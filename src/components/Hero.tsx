@@ -12,23 +12,23 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8 animate-fade-in">
             <div className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium">
-              Learn Web Development from Experts
+              Aprenda Desenvolvimento Web com Especialistas
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              Master the art of <span className="text-gradient">modern web development</span>
+              Domine a arte do <span className="text-gradient">desenvolvimento web moderno</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-lg">
-              Comprehensive courses, hands-on projects, and expert guidance to help you become a professional web developer.
+              Cursos abrangentes, projetos práticos e orientação especializada para ajudá-lo a se tornar um desenvolvedor web profissional.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#courses" className="button-primary flex items-center gap-2">
-                Explore Courses <ArrowRight className="w-4 h-4" />
+                Explorar Cursos <ArrowRight className="w-4 h-4" />
               </a>
               <button 
                 onClick={() => setShowDemoVideo(true)} 
                 className="button-secondary"
               >
-                Watch Demo
+                Assistir Demo
               </button>
             </div>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -39,7 +39,7 @@ const Hero = () => {
                   </div>
                 ))}
               </div>
-              <p>Join 10,000+ students already learning</p>
+              <p>Junte-se a mais de 10.000 alunos que já estão aprendendo</p>
             </div>
           </div>
           
@@ -60,9 +60,9 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="font-mono text-sm bg-black/80 text-green-400 p-4 rounded-lg shadow-sm text-left overflow-hidden">
-                    <p className="animate-pulse-subtle">&gt; Learning web development...</p>
+                    <p className="animate-pulse-subtle">&gt; Aprendendo desenvolvimento web...</p>
                     <p className="mt-2">
-                      <span className="text-blue-400">const</span> <span className="text-yellow-400">skills</span> = [
+                      <span className="text-blue-400">const</span> <span className="text-yellow-400">habilidades</span> = [
                       <span className="text-green-300">"HTML"</span>, 
                       <span className="text-green-300">"CSS"</span>, 
                       <span className="text-green-300">"JavaScript"</span>, 

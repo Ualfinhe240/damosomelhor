@@ -5,10 +5,10 @@ import InstructorProfile from './InstructorProfile';
 const instructors = [
   {
     id: 1,
-    name: "Frontend Expert",
-    role: "UI/UX Specialist",
+    name: "Especialista Frontend",
+    role: "Especialista em UI/UX",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    bio: "Frontend developer with 8+ years of experience specializing in HTML, CSS, and JavaScript. Passionate about creating beautiful and accessible web experiences.",
+    bio: "Desenvolvedor frontend com mais de 8 anos de experiência especializado em HTML, CSS e JavaScript. Apaixonado por criar experiências web bonitas e acessíveis.",
     skills: ["HTML", "CSS", "JavaScript", "React", "UI/UX"],
     courses: 12,
     students: 8650,
@@ -19,10 +19,10 @@ const instructors = [
   },
   {
     id: 2,
-    name: "JavaScript Guru",
-    role: "Full-Stack Developer",
+    name: "Guru JavaScript",
+    role: "Desenvolvedor Full-Stack",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    bio: "Full-stack developer with a focus on JavaScript frameworks. Previously worked at major tech companies and now dedicated to teaching web technologies.",
+    bio: "Desenvolvedor full-stack com foco em frameworks JavaScript. Trabalhou anteriormente em grandes empresas de tecnologia e agora se dedica ao ensino de tecnologias web.",
     skills: ["JavaScript", "TypeScript", "React", "Node.js", "Express"],
     courses: 15,
     students: 10250,
@@ -33,11 +33,11 @@ const instructors = [
   },
   {
     id: 3,
-    name: "Backend Architect",
-    role: "API Developer",
+    name: "Arquiteto Backend",
+    role: "Desenvolvedor de API",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-    bio: "Backend engineer specialized in Node.js, databases, and API development. Creator of several popular npm packages and open-source contributor.",
-    skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "API Design"],
+    bio: "Engenheiro backend especializado em Node.js, bancos de dados e desenvolvimento de API. Criador de vários pacotes npm populares e contribuidor de código aberto.",
+    skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "Design de API"],
     courses: 8,
     students: 6130,
     rating: 4.7,
@@ -46,10 +46,10 @@ const instructors = [
   },
   {
     id: 4,
-    name: "Senior Developer",
-    role: "Full-Stack Instructor",
+    name: "Desenvolvedor Sênior",
+    role: "Instrutor Full-Stack",
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-    bio: "Full-stack developer and educator with 10+ years in the industry. Previously CTO of a tech startup and now focused on helping new developers succeed.",
+    bio: "Desenvolvedor full-stack e educador com mais de 10 anos na indústria. Anteriormente CTO de uma startup de tecnologia e agora focado em ajudar novos desenvolvedores a terem sucesso.",
     skills: ["React", "Node.js", "MongoDB", "AWS", "DevOps"],
     courses: 20,
     students: 15480,
@@ -65,10 +65,10 @@ const InstructorsSection = () => {
     <section id="instructors" className="py-20 bg-secondary/30">
       <div className="section-container">
         <div className="flex flex-col items-center text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Expert Instructors</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Conheça Nossos Instrutores Especialistas</h2>
           <p className="text-muted-foreground max-w-2xl">
-            Learn from industry professionals with years of real-world experience.
-            Our instructors are passionate about sharing their knowledge and helping you succeed.
+            Aprenda com profissionais da indústria com anos de experiência no mundo real.
+            Nossos instrutores são apaixonados por compartilhar conhecimento e ajudá-lo a ter sucesso.
           </p>
         </div>
         
